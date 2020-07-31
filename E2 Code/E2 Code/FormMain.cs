@@ -30,11 +30,29 @@ namespace E2_Code
 
         private void buttonSeeTheCities_Click(object sender, EventArgs e)
         {
-            // Open the form as a dialog
+            // Make sure a state is selected
+            string selectedState = listBoxStates.SelectedItem.ToString().Trim();
+            if (selectedState != "")
+            {
+                // Open the form as a dialog
+                FormCity formCity = new FormCity(selectedState);
+                DialogResult result = formCity.ShowDialog();
 
-            // Check the dialog result
-
-            // get the public member variable value
+                // Check the dialog result
+                if (result == DialogResult.OK)
+                {
+                    // get the public member variable value
+                    MessageBox.Show("The selected city is " + formCity._SelectedCity);
+                }
+                else
+                {
+                    MessageBox.Show("No city selected - dialog cancelled");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please selected a state", "Attention");
+            }
         }
     }
 }
