@@ -31,9 +31,9 @@ namespace E2_Code
         private void buttonSeeTheCities_Click(object sender, EventArgs e)
         {
             // Make sure a state is selected
-            string selectedState = listBoxStates.SelectedItem.ToString().Trim();
-            if (selectedState != "")
+            if (listBoxStates.SelectedIndex >= 0)
             {
+                string selectedState = listBoxStates.SelectedItem.ToString().Trim();
                 // Open the form as a dialog
                 FormCity formCity = new FormCity(selectedState);
                 DialogResult result = formCity.ShowDialog();
@@ -53,6 +53,11 @@ namespace E2_Code
             {
                 MessageBox.Show("Please selected a state", "Attention");
             }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

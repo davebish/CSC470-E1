@@ -49,11 +49,11 @@ namespace E2_Code
             }
             else if (_SelectedState == "North Carolina")
             {
-                listBoxCities.Items.Add("Aurora");
-                listBoxCities.Items.Add("Durango");
-                listBoxCities.Items.Add("Littleton");
-                listBoxCities.Items.Add("Morrison");
-                listBoxCities.Items.Add("Wheat Ridge");
+                listBoxCities.Items.Add("Burlington");
+                listBoxCities.Items.Add("Climax");
+                listBoxCities.Items.Add("Greensboro");
+                listBoxCities.Items.Add("High Point");
+                listBoxCities.Items.Add("Raliegh");
             }
             else if (_SelectedState == "Oregon")
             {
@@ -86,12 +86,13 @@ namespace E2_Code
                 _SelectedCity = "";
                 this.Close();
             }
+            listBoxCities.SelectedIndex = 0;
         }
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            if (listBoxCities.SelectedIndex >= 0)
+            { 
             string selectedCity = listBoxCities.SelectedItem.ToString().Trim();
-            if (selectedCity != "")
-            {
                 _SelectedCity = selectedCity;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
