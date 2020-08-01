@@ -7,7 +7,7 @@ namespace E2_Code
     {
         public string _SelectedCity;
         private string _SelectedState;
-        public FormCity(string selectedState) 
+        public FormCity(string selectedState)
         {
             InitializeComponent();
             _SelectedState = selectedState;
@@ -86,12 +86,13 @@ namespace E2_Code
                 _SelectedCity = "";
                 this.Close();
             }
+            listBoxCities.SelectedIndex = 0;
         }
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            string selectedCity = listBoxCities.SelectedItem.ToString().Trim();
-            if (selectedCity != "")
+            if (listBoxCities.SelectedIndex >= 0)
             {
+                string selectedCity = listBoxCities.SelectedItem.ToString().Trim();
                 _SelectedCity = selectedCity;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
