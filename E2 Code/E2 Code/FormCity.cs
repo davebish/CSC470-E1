@@ -49,11 +49,11 @@ namespace E2_Code
             }
             else if (_SelectedState == "North Carolina")
             {
-                listBoxCities.Items.Add("Aurora");
-                listBoxCities.Items.Add("Durango");
-                listBoxCities.Items.Add("Littleton");
-                listBoxCities.Items.Add("Morrison");
-                listBoxCities.Items.Add("Wheat Ridge");
+                listBoxCities.Items.Add("Burlington");
+                listBoxCities.Items.Add("Climax");
+                listBoxCities.Items.Add("Greensboro");
+                listBoxCities.Items.Add("High Point");
+                listBoxCities.Items.Add("Wilmington");
             }
             else if (_SelectedState == "Oregon")
             {
