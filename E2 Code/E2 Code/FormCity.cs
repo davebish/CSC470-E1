@@ -102,5 +102,11 @@ namespace E2_Code
                 MessageBox.Show("Please selected a city or click Cancel", "Attention");
             }
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
